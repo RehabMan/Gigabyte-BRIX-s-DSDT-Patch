@@ -1,0 +1,2 @@
+# ig-platform-id injection done in config.plist
+
