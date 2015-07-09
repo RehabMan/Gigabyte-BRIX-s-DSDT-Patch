@@ -16,7 +16,19 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
  
     // All _OSI calls in DSDT are routed to XOSI...
     // XOSI simulates "Windows 2009" (which is Windows 7)
-    Method(XOSI, 1) { Return (LEqual(Arg0, "Windows 2009")) }
+    // Note: According to ACPI spec, _OSI("Windows") must also return true
+    // Note: According to ACPI spec, _OSI("Windows") must also return true
+    Method(XOSI, 1)
+    {
+        // simulation target
+        Store("Windows 2009", Local0)
+        // longer strings cannot match
+        If (LGreater(SizeOf(Arg0), SizeOf(Local0))) { Return (0) }
+        // compare only characters specified in the argument
+        CreateField(Local0, 0, ShiftLeft(SizeOf(Arg0),3), CMP1)
+        CreateField(Arg0, 0, ShiftLeft(SizeOf(Arg0),3), CMP2)
+        Return (LEqual(CMP1,CMP2))
+    }
 
     Scope(\_SB.PCI0)
     {
