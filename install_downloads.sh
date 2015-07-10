@@ -108,18 +108,21 @@ if [ $? -ne 0 ]; then
     for kext in *.zip; do
         install $kext "FakePCIID_BCM57XX|FakePCIID_AR9280|FakePCIID_Intel|BrcmPatchRAM|BrcmBluetoothInjector|CodecCommander"
     done
-    cd RehabMan-BrcmPatchRAM*
     if [[ "`sw_vers -productVersion`" == 10.11* ]]; then
-        install_kext BrcmBluetoothInjector.kext
+        # 10.11 needs only bluetooth injector
+        cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmBluetoothInjector.kext && cd ../..
+        # remove uploader just in case
+        $SUDO rm -Rf /System/Library/Extensions/BrcmPatchRAM.kext
     else
-        install_kext BrcmPatchRAM.kext
+        # prior to 10.11, need uploader
+        cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmPatchRAM.kext && cd ../..
+        # remove injector just in case
+        $SUDO rm -Rf /System/Library/Extensions/BrcmBluetoothInjector.kext
     fi
-    cd ..
     cd ../..
 fi
 
 # install (injector) kexts in the repo itself
-
 install_kext AppleHDA_ALC269.kext
 
 #if [[ "`sw_vers -productVersion`" == 10.11* ]]; then
