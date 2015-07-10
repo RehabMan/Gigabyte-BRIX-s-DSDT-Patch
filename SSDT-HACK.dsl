@@ -17,17 +17,34 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
     // All _OSI calls in DSDT are routed to XOSI...
     // XOSI simulates "Windows 2009" (which is Windows 7)
     // Note: According to ACPI spec, _OSI("Windows") must also return true
-    // Note: According to ACPI spec, _OSI("Windows") must also return true
+    //  Also, it should return true for all previous versions of Windows.
     Method(XOSI, 1)
     {
-        // simulation target
-        Store("Windows 2009", Local0)
-        // longer strings cannot match
-        If (LGreater(SizeOf(Arg0), SizeOf(Local0))) { Return (0) }
-        // compare only characters specified in the argument
-        CreateField(Local0, 0, ShiftLeft(SizeOf(Arg0),3), CMP1)
-        CreateField(Arg0, 0, ShiftLeft(SizeOf(Arg0),3), CMP2)
-        Return (LEqual(CMP1,CMP2))
+        // simulation targets
+        // source: (google 'Microsoft Windows _OSI')
+        //  http://download.microsoft.com/download/7/E/7/7E7662CF-CBEA-470B-A97E-CE7CE0D98DC2/WinACPI_OSI.docx
+        Name(WINV, Package()
+        {
+            "Windows",              // generic Windows query
+            "Windows 2001",         // Windows XP
+            "Windows 2001 SP2",     // Windows XP SP2
+            "Windows 2001.1",       // Windows Server 2003
+            "Windows 2001.1 SP1",   // Windows Server 20003 SP1
+            "Windows 2006",         // Windows Vista
+            "Windows 2006 SP1",     // Windows Vista SP1
+            "Windows 2006.1",       // Windows Server 2008
+            "Windows 2009",         // Windows 7/Windows Server 2008 R2
+            //"Windows 2012",       // Windows 8/Windows Sesrver 2012
+            //"Windows 2013",       // Windows 8.1/Windows Server 2012 R2
+            //"Windows 2015",       // Windows 10/Windows Server TP
+        })
+        Store(0, Local0)
+        While (LLess(Local0, SizeOf(WINV)))
+        {
+            If (LEqual(DerefOf(Index(WINV,Local0)), Arg0)) { Return (0xFFFFFFFF) }
+            Increment(Local0)
+        }
+        Return (0)
     }
 
     Scope(\_SB.PCI0)
