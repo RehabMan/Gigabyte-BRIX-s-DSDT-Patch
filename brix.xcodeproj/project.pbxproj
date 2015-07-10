@@ -43,9 +43,9 @@
 		EDBE54DD1B33E46900880A3A /* SSDT-4.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-4.dsl"; sourceTree = "<group>"; };
 		EDBE54DE1B33E46900880A3A /* SSDT-5.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-5.dsl"; sourceTree = "<group>"; };
 		EDBE54DF1B33E46900880A3A /* SSDT.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SSDT.dsl; sourceTree = "<group>"; };
-		EDC7F9411B4C64D200B49451 /* ahhcd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ahhcd.plist; path = ../../../../../../Users/RehabMan/Projects/brix.git/Resources_ALC269/ahhcd.plist; sourceTree = "<group>"; };
 		EDC7F9421B4C64FA00B49451 /* layout1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = layout1.plist; path = Resources_ALC269/layout/layout1.plist; sourceTree = "<group>"; };
 		EDC7F9431B4C64FA00B49451 /* Platforms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Platforms.plist; path = Resources_ALC269/layout/Platforms.plist; sourceTree = "<group>"; };
+		EDF134011B4F62DA009D8597 /* ahhcd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ahhcd.plist; path = Resources_ALC269/ahhcd.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				84490D5D1A14945B000E1BFB /* patch_hda.sh */,
-				EDC7F9411B4C64D200B49451 /* ahhcd.plist */,
+				EDF134011B4F62DA009D8597 /* ahhcd.plist */,
 				EDC7F9421B4C64FA00B49451 /* layout1.plist */,
 				EDC7F9431B4C64FA00B49451 /* Platforms.plist */,
 			);
