@@ -100,7 +100,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
         }
         
         // Inject properties for USB: EHC1/EHC2/XHC
-        Method(EHC1._DSM, 4)
+        Method(EH01._DSM, 4)
         {
             If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
             Return (Package()
@@ -114,7 +114,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
                 "AAPL,max-port-current-in-sleep", 2100,
             })
         }
-        Method(EHC2._DSM, 4)
+        Method(EH02._DSM, 4)
         {
             If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
             Return (Package()
