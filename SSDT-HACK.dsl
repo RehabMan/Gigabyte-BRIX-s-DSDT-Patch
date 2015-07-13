@@ -38,13 +38,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             //"Windows 2013",       // Windows 8.1/Windows Server 2012 R2
             //"Windows 2015",       // Windows 10/Windows Server TP
         })
-        Store(0, Local0)
-        While (LLess(Local0, SizeOf(WINV)))
-        {
-            If (LEqual(DerefOf(Index(WINV,Local0)), Arg0)) { Return (0xFFFFFFFF) }
-            Increment(Local0)
-        }
-        Return (0)
+        Return (LNotEqual(Match(WINV, MEQ, Arg0, MTR, 0, 0), Ones))
     }
 
     Scope(\_SB.PCI0)
