@@ -23,7 +23,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
         // simulation targets
         // source: (google 'Microsoft Windows _OSI')
         //  http://download.microsoft.com/download/7/E/7/7E7662CF-CBEA-470B-A97E-CE7CE0D98DC2/WinACPI_OSI.docx
-        Name(WINV, Package()
+        Store(Package()
         {
             "Windows",              // generic Windows query
             "Windows 2001",         // Windows XP
@@ -37,10 +37,13 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             //"Windows 2012",       // Windows 8/Windows Sesrver 2012
             //"Windows 2013",       // Windows 8.1/Windows Server 2012 R2
             //"Windows 2015",       // Windows 10/Windows Server TP
-        })
-        Return (LNotEqual(Match(WINV, MEQ, Arg0, MTR, 0, 0), Ones))
+        }, Local0)
+        Return (LNotEqual(Match(Local0, MEQ, Arg0, MTR, 0, 0), Ones))
     }
 
+// Note: All the _DSM injects below could be done in config.plist/Devices/Arbitrary
+//  For now, using config.plist instead of _DSM methods.
+/*
     Scope(\_SB.PCI0)
     {
         // inject properties for onboard audio
@@ -54,43 +57,25 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             })
         }
         
-        // Disable B0D3 and rename B0D3 to HDAU
-        Device(HDAU)
+        // injecting properties for HDMI audio
+        Method(HDAU._DSM, 4)
         {
-            Name(_ADR, 0x00030000)
-            // by storing zero to B0D3._ADR, we keep B0D3 from attaching to the device
-            Method(_INI) { Store(0, \_SB.PCI0.B0D3._ADR) }
-            // injecting properties for HDMI audio
-            Method(_DSM, 4)
+            If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+            Return (Package()
             {
-                If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-                Return (Package()
-                {
-                    "layout-id", Buffer() { 1, 0, 0, 0, },
-                    "hda-gfx", Buffer() { "onboard-1" },
-                })
-            }
+                "layout-id", Buffer() { 1, 0, 0, 0, },
+                "hda-gfx", Buffer() { "onboard-1" },
+            })
         }
         
-        // By defining GFX0._STA as zero, we keep GFX0 from attaching to the device
-        // Note: this only works becuase GFX0._STA is not defined in OEM ACPI files.
-        Name(GFX0._STA, 0)
-        
-        // Define new IGPU, in replacement of GFX0
-        Device(IGPU)
+        // injecting properties for HDMI audo
+        Method(IGPU._DSM, 4)
         {
-            Name(_ADR, 0x00020000)
-            // by storing zero to GFX0._ADR, we keep GFX0 from attaching to the device
-            Method(_INI) { Store(0, \_SB.PCI0.GFX0._ADR) }
-            // injecting properties for HDMI audo
-            Method(_DSM, 4)
+            If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+            Return (Package()
             {
-                If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-                Return (Package()
-                {
-                    "hda-gfx", Buffer() { "onboard-1" },
-                })
-            }
+                "hda-gfx", Buffer() { "onboard-1" },
+            })
         }
         
         // Inject properties for USB: EHC1/EHC2/XHC
@@ -137,5 +122,6 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             })
         }
     }
+*/
 }
 

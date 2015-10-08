@@ -11,6 +11,13 @@ http://www.tonymacx86.com/yosemite-desktop-guides/167933-guide-gigabyte-brix-s-u
 
 ### Change Log:
 
+2015-10-07 
+
+- Use Arbitrary injection (new feature in Clover, working with my fixes to Clover v3279+)
+
+- use DSDT/Patches for IGPU/HDAU renames (DSDT/Patches faster with my fixes to Clover v3279+)
+
+
 2015-07-07
 
 - Cleanup and transition to on-the-fly patching for this mini desktop PC.

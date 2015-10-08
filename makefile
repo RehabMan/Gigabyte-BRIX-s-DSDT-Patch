@@ -6,7 +6,6 @@
 # Created by RehabMan 
 #
 
-EFIDIR=$(shell sudo ./mount_efi.sh /)
 BUILDDIR=./build
 RESOURCES=./Resources_ALC269
 HDAINJECT=AppleHDA_ALC269.kext
@@ -29,6 +28,7 @@ clean:
 # Clover Install
 .PHONY: install
 install: $(BUILDDIR)/SSDT-HACK.aml
+	$(eval EFIDIR:=$(shell sudo ./mount_efi.sh /))
 	cp $(BUILDDIR)/SSDT-HACK.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-HACK.aml
 
 $(HDAINJECT): $(RESOURCES)/ahhcd.plist $(RESOURCES)/layout/Platforms.xml.zlib $(RESOURCES)/layout/$(HDALAYOUT).xml.zlib ./patch_hda.sh
