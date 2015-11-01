@@ -11,6 +11,14 @@ RESOURCES=./Resources_ALC269
 HDAINJECT=AppleHDA_ALC269.kext
 HDALAYOUT=layout1
 
+VERSION_ERA=$(shell ./print_version.sh)
+ifeq "$(VERSION_ERA)" "10.10-"
+	INSTDIR=/System/Library/Extensions
+else
+	INSTDIR=/Library/Extensions
+endif
+SLE=/System/Library/Extensions
+
 IASLFLAGS=-ve
 IASL=iasl
 
@@ -35,8 +43,8 @@ $(HDAINJECT): $(RESOURCES)/ahhcd.plist $(RESOURCES)/layout/Platforms.xml.zlib $(
 	./patch_hda.sh
 	touch $@
 
-$(RESOURCES)/layout/Platforms.xml.zlib: $(RESOURCES)/layout/Platforms.plist /System/Library/Extensions/AppleHDA.kext/Contents/Resources/Platforms.xml.zlib
-	./tools/zlib inflate /System/Library/Extensions/AppleHDA.kext/Contents/Resources/Platforms.xml.zlib >/tmp/rm_Platforms.plist
+$(RESOURCES)/layout/Platforms.xml.zlib: $(RESOURCES)/layout/Platforms.plist $(SLE)/AppleHDA.kext/Contents/Resources/Platforms.xml.zlib
+	./tools/zlib inflate $(SLE)/AppleHDA.kext/Contents/Resources/Platforms.xml.zlib >/tmp/rm_Platforms.plist
 	/usr/libexec/plistbuddy -c "Delete ':PathMaps'" /tmp/rm_Platforms.plist
 	/usr/libexec/plistbuddy -c "Merge $(RESOURCES)/layout/Platforms.plist" /tmp/rm_Platforms.plist
 	./tools/zlib deflate /tmp/rm_Platforms.plist >$@
@@ -46,13 +54,13 @@ $(RESOURCES)/layout/$(HDALAYOUT).xml.zlib: $(RESOURCES)/layout/$(HDALAYOUT).plis
 
 .PHONY: update_kernelcache
 update_kernelcache:
-	sudo touch /System/Library/Extensions
+	sudo touch $(SLE)
 	sudo kextcache -update-volume /
 
 .PHONY: install_hda
 install_hda:
-	sudo rm -Rf /System/Library/Extensions/$(HDAINJECT)
-	sudo cp -R ./$(HDAINJECT) /System/Library/Extensions
-	if [ "`which tag`" != "" ]; then sudo tag -a Blue /System/Library/Extensions/$(HDAINJECT); fi
+	sudo rm -Rf $(INSTDIR)/$(HDAINJECT)
+	sudo cp -R ./$(HDAINJECT) $(INSTDIR)
+	if [ "`which tag`" != "" ]; then sudo tag -a Blue $(INSTDIR)/$(HDAINJECT); fi
 	make update_kernelcache
 
