@@ -73,45 +73,13 @@
 				<true/>
 			</dict>
 		</dict>
-		<key>#DropTables</key>
-		<array>
-			<dict>
-				<key>Signature</key>
-				<string>DMAR</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>#SaSsdt </string>
-			</dict>
-		</array>
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
 			<false/>
 			<key>Generate</key>
-			<dict>
-				<key>CStates</key>
-				<false/>
-				<key>PStates</key>
-				<false/>
-			</dict>
-			<key>PluginType</key>
-			<integer>1</integer>
+			<false/>
 		</dict>
-		<key>#SortedOrder</key>
-		<array>
-			<string>SSDT.aml</string>
-			<string>SSDT-0.aml</string>
-			<string>SSDT-1.aml</string>
-			<string>SSDT-2.aml</string>
-			<string>SSDT-3.aml</string>
-			<string>SSDT-4.aml</string>
-			<string>SSDT-5.aml</string>
-			<string>SSDT-6.aml</string>
-			<string>SSDT-7.aml</string>
-		</array>
 		<key>SortedOrder</key>
 		<array>
 			<string>SSDT.aml</string>
@@ -416,11 +384,11 @@
 		<key>Theme</key>
 		<string>bluemac</string>
 	</dict>
-	<key>Graphics</key>
+	<key>#Graphics</key>
 	<dict>
 		<key>ig-platform-id</key>
 		<string>0x0d220003</string>
-		<key>#Inject</key>
+		<key>Inject</key>
 		<dict>
 			<key>Intel</key>
 			<true/>
