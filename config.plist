@@ -51,6 +51,8 @@
 			</array>
 			<key>Fixes</key>
 			<dict>
+				<key>NewWay_80000000</key>
+				<true/>
 				<key>AddDTGP_0001</key>
 				<true/>
 				<key>AddMCHC_0008</key>
@@ -66,10 +68,6 @@
 				<key>FixIPIC_0040</key>
 				<true/>
 				<key>FixHPET_0010</key>
-				<true/>
-				<key>FixRegions_10000000</key>
-				<true/>
-				<key>NewWay_80000000</key>
 				<true/>
 			</dict>
 		</dict>
@@ -319,6 +317,14 @@
 						<string>AAPL,max-port-current-in-sleep</string>
 						<key>Value</key>
 						<integer>2100</integer>
+					</dict>
+					<dict>
+						<key>Comment</key>
+						<string>No XHC to EHC port routing for USB2</string>
+						<key>Key</key>
+						<string>RM,pr2-force</string>
+						<key>Value</key>
+						<data>/z8AAA==</data>
 					</dict>
 				</array>
 			</dict>
