@@ -7,13 +7,6 @@
 
 DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
 {
-    External(_SB.PCI0, DeviceObj)
-    External(_SB.PCI0.B0D3._ADR, IntObj)
-    External(_SB.PCI0.GFX0._ADR, IntObj)
-    External(_SB.PCI0.EHC1, DeviceObj)
-    External(_SB.PCI0.EHC2, DeviceObj)
-    External(_SB.PCI0.XHC, DeviceObj)
- 
     // All _OSI calls in DSDT are routed to XOSI...
     // XOSI simulates "Windows 2009" (which is Windows 7)
     // Note: According to ACPI spec, _OSI("Windows") must also return true
@@ -40,88 +33,5 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
         }, Local0)
         Return (LNotEqual(Match(Local0, MEQ, Arg0, MTR, 0, 0), Ones))
     }
-
-// Note: All the _DSM injects below could be done in config.plist/Devices/Arbitrary
-//  For now, using config.plist instead of _DSM methods.
-/*
-    Scope(\_SB.PCI0)
-    {
-        // inject properties for onboard audio
-        Method(HDEF._DSM, 4)
-        {
-            If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-            Return (Package()
-            {
-                "layout-id", Buffer() { 1, 0, 0, 0, },
-                "PinConfigurations", Buffer(Zero) {},
-            })
-        }
-        
-        // injecting properties for HDMI audio
-        Method(HDAU._DSM, 4)
-        {
-            If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-            Return (Package()
-            {
-                "layout-id", Buffer() { 1, 0, 0, 0, },
-                "hda-gfx", Buffer() { "onboard-1" },
-            })
-        }
-        
-        // injecting properties for HDMI audo
-        Method(IGPU._DSM, 4)
-        {
-            If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-            Return (Package()
-            {
-                "hda-gfx", Buffer() { "onboard-1" },
-            })
-        }
-        
-        // Inject properties for USB: EHC1/EHC2/XHC
-        Method(EH01._DSM, 4)
-        {
-            If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-            Return (Package()
-            {
-                "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },
-                "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },
-                "AAPL,current-available", 2100,
-                "AAPL,current-extra", 2200,
-                "AAPL,current-extra-in-sleep", 1600,
-                //"AAPL,device-internal", 0x02,
-                "AAPL,max-port-current-in-sleep", 2100,
-            })
-        }
-        Method(EH02._DSM, 4)
-        {
-            If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-            Return (Package()
-            {
-                "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },
-                "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },
-                "AAPL,current-available", 2100,
-                "AAPL,current-extra", 2200,
-                "AAPL,current-extra-in-sleep", 1600,
-                //"AAPL,device-internal", 0x02,
-                "AAPL,max-port-current-in-sleep", 2100,
-            })
-        }
-        Method(XHC._DSM, 4)
-        {
-            If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-            Return (Package()
-            {
-                "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },
-                "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },
-                "AAPL,current-available", 2100,
-                "AAPL,current-extra", 2200,
-                "AAPL,current-extra-in-sleep", 1600,
-                //"AAPL,device-internal", 0x02,
-                "AAPL,max-port-current-in-sleep", 2100,
-            })
-        }
-    }
-*/
 }
 
