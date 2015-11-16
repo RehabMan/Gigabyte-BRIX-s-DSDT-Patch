@@ -11,6 +11,16 @@ http://www.tonymacx86.com/yosemite-desktop-guides/167933-guide-gigabyte-brix-s-u
 
 ### Change Log:
 
+2015-10-15
+
+- disable EHCI#1 USB2 controller, use XHCI only
+
+
+2015-10-01
+
+- install to /L/E on 10.11+
+
+
 2015-10-07 
 
 - Use Arbitrary injection (new feature in Clover, working with my fixes to Clover v3279+)
