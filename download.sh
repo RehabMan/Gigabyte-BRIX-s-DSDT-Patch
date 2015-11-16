@@ -21,9 +21,10 @@ if [ ! -d ./downloads ]; then mkdir ./downloads; fi && rm -Rf downloads/* && cd 
 mkdir ./kexts && cd ./kexts
 download os-x-fakesmc-kozlek RehabMan-FakeSMC
 download os-x-realtek-network RehabMan-Realtek-Network
-download os-x-eapd-codec-commander RehabMan-CodecCommander
+#download os-x-eapd-codec-commander RehabMan-CodecCommander
 download os-x-fake-pci-id RehabMan-FakePCIID
 download os-x-brcmpatchram RehabMan-BrcmPatchRAM
+#download os-x-usb-inject-all RehabMan-USBInjectAll
 #download os-x-acpi-debug RehabMan-Debug
 cd ..
 
