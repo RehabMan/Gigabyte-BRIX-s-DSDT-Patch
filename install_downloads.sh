@@ -131,7 +131,7 @@ if [ $? -ne 0 ]; then
         # 10.11 needs BrcmPatchRAM2.kext
         cd RehabMan-BrcmPatchRAM*/Release && install_kext BrcmPatchRAM2.kext && cd ../..
         # 10.11 needs USBInjectAll.kext
-        #cd RehabMan-USBInjectAll*/Release && install_kext USBInjectAll.kext && cd ../..
+        cd RehabMan-USBInjectAll*/Release && install_kext USBInjectAll.kext && cd ../..
         # remove BrcPatchRAM.kext just in case
         $SUDO rm -Rf $SLE/BrcmPatchRAM.kext $KEXTDEST/BrcmPatchRAM.kext
         # remove injector just in case
@@ -146,8 +146,6 @@ if [ $? -ne 0 ]; then
     fi
     # this guide does not use BrcmFirmwareData.kext
     $SUDO rm -Rf $SLE/BrcmFirmwareData.kext $KEXTDEST/BrcmFirmwareData.kext
-    # now using IntelBacklight.kext instead of ACPIBacklight.kext
-    $SUDO rm -Rf $SLE/ACPIBacklight.kext $KEXTDEST/ACPIBacklight.kext
     # since EHCI #1 is disabled, FakePCIID_XHCIMux.kext cannot be used
     $SUDO rm -Rf $KEXTDEST/FakePCIID_XHCIMux.kext
     # deal with some renames
