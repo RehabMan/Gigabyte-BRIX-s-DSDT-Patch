@@ -34,7 +34,9 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
         Return (LNotEqual(Match(Local0, MEQ, Arg0, MTR, 0, 0), Ones))
     }
 
-    // Override for USBInjectAll.kext
+//
+// Override for USBInjectAll.kext
+//
     Device(UIAC)
     {
         Name(_HID, "UIA00000")
@@ -102,7 +104,6 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
         })
     }
 
-
 //
 // Disabling EHCI #1
 //
@@ -150,5 +151,50 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             }
         }
     }
+
+//
+// Graphics injection
+//
+    Scope(_SB.PCI0)
+    {
+        External(IGPU, DeviceObj)
+        Scope(IGPU)
+        {
+            // need the device-id from PCI_config to inject correct properties
+            OperationRegion(IGD4, PCI_Config, 2, 2)
+            Field(IGD4, AnyAcc, NoLock, Preserve)
+            {
+                GDID,16
+            }
+
+            // inject properties for integrated graphics on IGPU
+            Method(_DSM, 4)
+            {
+                If (LEqual(Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                Store(Package()
+                {
+                    "model", Buffer() { "place holder" },
+                    "device-id", Buffer() { 0x12, 0x04, 0x00, 0x00 },
+                    "hda-gfx", Buffer() { "onboard-1" },
+                    "AAPL,ig-platform-id", Buffer() { 0x03, 0x00, 0x22, 0x0d },
+                }, Local1)
+                Store(GDID, Local0)
+                If (LEqual(Local0, 0x0a16)) { Store("Intel HD Graphics 4400", Index(Local1,1)) }
+                ElseIf (LEqual(Local0, 0x0416)) { Store("Intel HD Graphics 4600", Index(Local1,1)) }
+                ElseIf (LEqual(Local0, 0x0a1e)) { Store("Intel HD Graphics 4200", Index(Local1,1)) }
+                Else
+                {
+                    // others (HD5000 and Iris) are natively supported
+                    Store(Package()
+                    {
+                        "hda-gfx", Buffer() { "onboard-1" },
+                        "AAPL,ig-platform-id", Buffer() { 0x03, 0x00, 0x22, 0x0d },
+                    }, Local1)
+                }
+                Return(Local1)
+            }
+        }
+    }
 }
 
+//EOF
