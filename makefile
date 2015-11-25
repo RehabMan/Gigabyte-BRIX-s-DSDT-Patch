@@ -22,12 +22,21 @@ SLE=/System/Library/Extensions
 IASLFLAGS=-ve
 IASL=iasl
 
+ALL=$(BUILDDIR)/SSDT-HACK.aml $(BUILDDIR)/SSDT-IGPU.aml $(BUILDDIR)/SSDT-USB.aml
+
 # for now only build SSDT-HACK.aml, not patched set
 .PHONY: all
-all: $(BUILDDIR)/SSDT-HACK.aml $(HDAINJECT)
+all: $(ALL) $(HDAINJECT)
 
 $(BUILDDIR)/SSDT-HACK.aml: ./SSDT-HACK.dsl
 	$(IASL) $(IASLFLAGS) -p $@ $<
+
+$(BUILDDIR)/SSDT-IGPU.aml: ./SSDT-IGPU.dsl
+	$(IASL) $(IASLFLAGS) -p $@ $<
+
+$(BUILDDIR)/SSDT-USB.aml: ./SSDT-USB.dsl
+	$(IASL) $(IASLFLAGS) -p $@ $<
+
 
 .PHONY: clean
 clean:
@@ -37,7 +46,7 @@ clean:
 .PHONY: install
 install: $(BUILDDIR)/SSDT-HACK.aml
 	$(eval EFIDIR:=$(shell sudo ./mount_efi.sh /))
-	cp $(BUILDDIR)/SSDT-HACK.aml $(EFIDIR)/EFI/CLOVER/ACPI/patched/SSDT-HACK.aml
+	cp $(BUILDDIR)/$(ALL) $(EFIDIR)/EFI/CLOVER/ACPI/patched
 
 $(HDAINJECT): $(RESOURCES)/ahhcd.plist $(RESOURCES)/layout/Platforms.xml.zlib $(RESOURCES)/layout/$(HDALAYOUT).xml.zlib ./patch_hda.sh
 	./patch_hda.sh
