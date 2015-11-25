@@ -44,9 +44,9 @@ clean:
 
 # Clover Install
 .PHONY: install
-install: $(BUILDDIR)/SSDT-HACK.aml
+install: $(ALL)
 	$(eval EFIDIR:=$(shell sudo ./mount_efi.sh /))
-	cp $(BUILDDIR)/$(ALL) $(EFIDIR)/EFI/CLOVER/ACPI/patched
+	cp $(ALL) $(EFIDIR)/EFI/CLOVER/ACPI/patched
 
 $(HDAINJECT): $(RESOURCES)/ahhcd.plist $(RESOURCES)/layout/Platforms.xml.zlib $(RESOURCES)/layout/$(HDALAYOUT).xml.zlib ./patch_hda.sh
 	./patch_hda.sh
