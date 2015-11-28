@@ -7,9 +7,9 @@
 #
 
 BUILDDIR=./build
-RESOURCES=./Resources_ALC269
-HDAINJECT=AppleHDA_ALC269.kext
-HDALAYOUT=layout1
+HDA=ALC269
+RESOURCES=./Resources_$(HDA)
+HDAINJECT=AppleHDA_$(HDA).kext
 
 VERSION_ERA=$(shell ./print_version.sh)
 ifeq "$(VERSION_ERA)" "10.10-"
@@ -48,8 +48,8 @@ install: $(ALL)
 	$(eval EFIDIR:=$(shell sudo ./mount_efi.sh /))
 	cp $(ALL) $(EFIDIR)/EFI/CLOVER/ACPI/patched
 
-$(HDAINJECT): $(RESOURCES)/ahhcd.plist $(RESOURCES)/layout/Platforms.xml.zlib $(RESOURCES)/layout/$(HDALAYOUT).xml.zlib ./patch_hda.sh
-	./patch_hda.sh
+$(HDAINJECT): $(RESOURCES)/*.plist ./patch_hda.sh
+	./patch_hda.sh $(HDA)
 	touch $@
 
 $(RESOURCES)/layout/Platforms.xml.zlib: $(RESOURCES)/layout/Platforms.plist $(SLE)/AppleHDA.kext/Contents/Resources/Platforms.xml.zlib
