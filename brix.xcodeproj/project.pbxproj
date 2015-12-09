@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		840152EF182AE45E00D58B0A /* layout1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = layout1.plist; path = Resources_ALC269/layout1.plist; sourceTree = "<group>"; usesTabs = 1; };
 		8406FCD6188627B8006D8DB7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		84490D5D1A14945B000E1BFB /* patch_hda.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = patch_hda.sh; sourceTree = "<group>"; };
 		8455352818E65265001ADBFD /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
@@ -33,7 +32,6 @@
 				ED48DF001B4CCCC800BDDC62 /* SSDT-HACK.dsl */,
 				ED373E171C0535C1005018E4 /* SSDT-IGPU.dsl */,
 				ED373E181C0535C1005018E4 /* SSDT-USB.dsl */,
-				840152EF182AE45E00D58B0A /* layout1.plist */,
 				8467C38E1A23A9FC00FCF396 /* mount_efi.sh */,
 				ED3F518B1A2029DE0060691A /* download.sh */,
 				ED3F518A1A2029DE0060691A /* install_downloads.sh */,
