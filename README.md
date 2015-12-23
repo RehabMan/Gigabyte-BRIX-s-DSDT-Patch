@@ -8,8 +8,19 @@ Please refer to this guide thread on tonymacx86.com for a step-by-step process, 
 
 http://www.tonymacx86.com/yosemite-desktop-guides/167933-guide-gigabyte-brix-s-using-clover-uefi-gb-bxi5h-4200-a.html
 
-
 ### Change Log:
+
+2015-10-24
+
+- refactor SSDT-HACK into separate SSDTs
+
+- inject graphics with SSDT-IGPU (more flexible and will handle models other than this specific BRIX)
+
+
+2015-10-17
+
+- use USBInjectAll.kext with custom configuration
+
 
 2015-10-15
 
