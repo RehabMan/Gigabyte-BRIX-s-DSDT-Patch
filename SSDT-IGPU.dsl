@@ -35,7 +35,7 @@ DefinitionBlock ("SSDT-IGPU.aml", "SSDT", 1, "hack", "igpu", 0x00003000)
                         "AAPL,ig-platform-id", Buffer() {  0x03, 0x00, 0x22, 0x0d },
                     },
                     // Haswell/HD4400
-                    0x0a16, Package()
+                    0x0a16, 0x041e, Package()
                     {
                         "model", Buffer() { "Intel HD Graphics 4400" },
                         "device-id", Buffer() { 0x12, 0x04, 0x00, 0x00 },
@@ -58,7 +58,7 @@ DefinitionBlock ("SSDT-IGPU.aml", "SSDT", 1, "hack", "igpu", 0x00003000)
                         "AAPL,ig-platform-id", Buffer() {  0x03, 0x00, 0x22, 0x0d },
                     },
                     // Haswell/HD5000/HD5100/HD5200
-                    0x0a26, 0x0a2e, 0x0d26, Package()
+                    0x0a26, 0x0a2e, 0x0d22, 0x0d26, Package()
                     {
                         "hda-gfx", Buffer() { "onboard-1" },
                         "AAPL,ig-platform-id", Buffer() {  0x03, 0x00, 0x22, 0x0d },
