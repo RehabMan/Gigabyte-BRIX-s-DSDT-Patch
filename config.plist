@@ -497,6 +497,18 @@
 				<key>Replace</key>
 				<data>AQUSAAAIAACHAAAA</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>change 15 port limit to 20 in XHCI kext (9-series)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>g72M/v//EA==</data>
+				<key>Name</key>
+				<string>AppleUSBXHCIPCI</string>
+				<key>Replace</key>
+				<data>g72M/v//FQ==</data>
+			</dict>
 		</array>
 	</dict>
 	<key>RtVariables</key>

@@ -17,7 +17,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "usb", 0x00003000)
                 "port-count", Buffer() { 0, 0, 0, 0 },
                 "ports", Package() { },
             },
-            // XHC overrides
+            // XHC overrides (8086:9xxx)
             "8086_9xxx", Package()
             {
                 //"port-count", Buffer() { 0x0d, 0, 0, 0},
@@ -67,6 +67,59 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "usb", 0x00003000)
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 0x0d, 0, 0, 0 },
+                    },
+                },
+            },
+            // XHC overrides (8086:8xxx)
+            "8086_8xxx", Package()
+            {
+                //"port-count", Buffer() { 0x0d, 0, 0, 0},
+                "ports", Package()
+                {
+                    "HS01", Package() // HS USB3 front top
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x01, 0, 0, 0 },
+                    },
+                    "HS02", Package() // HS USB3 front bottom
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x02, 0, 0, 0 },
+                    },
+                    "HS03", Package() // HS USB3 rear top
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x03, 0, 0, 0 },
+                    },
+                    "HS04", Package() // HS USB3 rear bottom
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x04, 0, 0, 0 },
+                    },
+                    "HS07", Package() // bluetooth
+                    {
+                        "UsbConnector", 255,
+                        "port", Buffer() { 0x07, 0, 0, 0 },
+                    },
+                    "SS01", Package() // SS USB3 front top
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x10, 0, 0, 0 },
+                    },
+                    "SS02", Package() // SS USB3 front bottom
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x11, 0, 0, 0 },
+                    },
+                    "SS03", Package() // SS USB3 rear top
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x12, 0, 0, 0 },
+                    },
+                    "SS04", Package() // SS USB3 rear bottom
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x13, 0, 0, 0 },
                     },
                 },
             },
