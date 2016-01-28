@@ -73,7 +73,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "usb", 0x00003000)
             // XHC overrides (8086:8xxx)
             "8086_8xxx", Package()
             {
-                //"port-count", Buffer() { 0x0d, 0, 0, 0},
+                //"port-count", Buffer() { 0x15, 0, 0, 0},
                 "ports", Package()
                 {
                     "HS01", Package() // HS USB3 front top
@@ -111,15 +111,15 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "usb", 0x00003000)
                         "UsbConnector", 3,
                         "port", Buffer() { 0x11, 0, 0, 0 },
                     },
-                    "SS03", Package() // SS USB3 rear top
+                    "SS05", Package() // SS USB3 rear top
                     {
                         "UsbConnector", 3,
-                        "port", Buffer() { 0x12, 0, 0, 0 },
+                        "port", Buffer() { 0x14, 0, 0, 0 },
                     },
-                    "SS04", Package() // SS USB3 rear bottom
+                    "SS06", Package() // SS USB3 rear bottom
                     {
                         "UsbConnector", 3,
-                        "port", Buffer() { 0x13, 0, 0, 0 },
+                        "port", Buffer() { 0x15, 0, 0, 0 },
                     },
                 },
             },
