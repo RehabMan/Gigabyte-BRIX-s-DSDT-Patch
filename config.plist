@@ -483,7 +483,7 @@
 				<key>Find</key>
 				<data>AQUJAAAEAACHAAAA</data>
 				<key>Name</key>
-				<string>#AppleIntelFramebufferAzul</string>
+				<string>AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>AQUJAAAIAACHAAAA</data>
 			</dict>
