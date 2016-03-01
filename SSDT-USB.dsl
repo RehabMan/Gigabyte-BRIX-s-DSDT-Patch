@@ -1,7 +1,7 @@
 // Instead of providing patched DSDT/SSDT, just include a single SSDT
 // and do the rest of the work in config.plist
 
-DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "usb", 0x00003000)
+DefinitionBlock ("", "SSDT", 2, "hack", "usb", 0)
 {
 //
 // Override for USBInjectAll.kext

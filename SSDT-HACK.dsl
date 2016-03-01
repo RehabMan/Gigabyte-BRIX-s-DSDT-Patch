@@ -5,7 +5,7 @@
 // Becuase of the minimal patches required, we can do most of the work in
 // config.plist and small SSDTs such as this one.
 
-DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
+DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
 {
     // All _OSI calls in DSDT are routed to XOSI...
     // XOSI simulates "Windows 2009" (which is Windows 7)
@@ -31,7 +31,7 @@ DefinitionBlock ("SSDT-HACK.aml", "SSDT", 1, "hack", "hack", 0x00003000)
             //"Windows 2013",       // Windows 8.1/Windows Server 2012 R2
             //"Windows 2015",       // Windows 10/Windows Server TP
         }, Local0)
-        Return (LNotEqual(Match(Local0, MEQ, Arg0, MTR, 0, 0), Ones))
+        Return (Ones != Match(Local0, MEQ, Arg0, MTR, 0, 0))
     }
 }
 
