@@ -162,7 +162,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "usb", 0)
                 RCB1, 32, // Root Complex Base Address
             }
             // address is in bits 31:14
-            OperationRegion(FDM1, SystemMemory, Add(And(RCB1,Not(Subtract(ShiftLeft(1,14),1))),0x3418), 4)
+            OperationRegion(FDM1, SystemMemory, (RCB1 & Not((1<<14)-1)) + 0x3418, 4)
             Field(FDM1, DWordAcc, NoLock, Preserve)
             {
                 ,13,    // skip first 13 bits
@@ -179,15 +179,15 @@ DefinitionBlock ("", "SSDT", 2, "hack", "usb", 0)
             {
                 // disable EHCI#1
                 // put EHCI#1 in D3hot (sleep mode)
-                Store(3, ^^EH01.PSTE)
+                ^^EH01.PSTE = 3
                 // disable EHCI#1 PCI space
-                Store(1, ^^LPCB.FDE1)
+                ^^LPCB.FDE1 = 1
 
                 // disable EHCI#2
                 // put EHCI#2 in D3hot (sleep mode)
-                Store(3, ^^EH02.PSTE)
+                ^^EH02.PSTE = 3
                 // disable EHCI#2 PCI space
-                Store(1, ^^LPCB.FDE2)
+                ^^LPCB.FDE2 = 1
             }
         }
     }
