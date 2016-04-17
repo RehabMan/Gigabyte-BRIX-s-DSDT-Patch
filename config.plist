@@ -379,6 +379,18 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>change 15 port limit to 20 in XHCI kext (9-series)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>g72M/v//EA==</data>
+				<key>Name</key>
+				<string>AppleUSBXHCIPCI</string>
+				<key>Replace</key>
+				<data>g72M/v//FQ==</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>10.9.5 5Ghz US FCC, svko</string>
 				<key>Find</key>
 				<data>WFQAIBcnIAAA</data>
@@ -416,6 +428,30 @@
 				<string>IOBluetoothFamily</string>
 				<key>Replace</key>
 				<data>Qb4PAAAA60Q=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>AppleHDA .xml.zlib to .zml.zlib</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>LnhtbC56bA==</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>LnptbC56bA==</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>AppleHDA ALC262 to ALC269</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>YgLsEA==</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>aQLsEA==</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -496,18 +532,6 @@
 				<string>#AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>AQUSAAAIAACHAAAA</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change 15 port limit to 20 in XHCI kext (9-series)</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>g72M/v//EA==</data>
-				<key>Name</key>
-				<string>AppleUSBXHCIPCI</string>
-				<key>Replace</key>
-				<data>g72M/v//FQ==</data>
 			</dict>
 		</array>
 	</dict>

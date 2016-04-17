@@ -160,8 +160,20 @@ if [ $? -ne 0 ]; then
     cd ../..
 fi
 
-# install (injector) kexts in the repo itself
-install_kext AppleHDA_ALC269.kext
+# install kexts in the repo itself
+
+# patching AppleHDA
+$SUDO rm -Rf $KEXTDEST/AppleHDA_ALC269.kext
+$SUDO rm -Rf $KEXTDEST/AppleHDAHCD_ALC269.kext
+$SUDO rm -f $SLE/AppleHDA.kext/Contents/Resources/*.zml*
+if [[ 0 -eq 0 ]]; then
+    # dummyHDA configuration
+    install_kext AppleHDA_ALC269.kext
+else
+# alternate configuration (requires .xml.zlib .zml.zlib AppleHDA patch)
+    install_kext AppleHDAHCD_ALC269.kext
+    $SUDO cp AppleHDA_ALC269_Resources/*.zml* $SLE/AppleHDA.kext/Contents/Resources
+fi
 
 #if [[ $MINOR_VER -ge 11 ]]; then
     #install_kext USBXHC_BRIX.kext

@@ -10,6 +10,8 @@ BUILDDIR=./build
 HDA=ALC269
 RESOURCES=./Resources_$(HDA)
 HDAINJECT=AppleHDA_$(HDA).kext
+HDAHCDINJECT=AppleHDAHCD_$(HDA).kext
+HDAZML=AppleHDA_$(HDA)_Resources
 
 VERSION_ERA=$(shell ./print_version.sh)
 ifeq "$(VERSION_ERA)" "10.10-"
@@ -26,7 +28,7 @@ ALL=$(BUILDDIR)/SSDT-HACK.aml $(BUILDDIR)/SSDT-IGPU.aml $(BUILDDIR)/SSDT-USB.aml
 
 # for now only build SSDT-HACK.aml, not patched set
 .PHONY: all
-all: $(ALL) $(HDAINJECT)
+all: $(ALL) $(HDAINJECT) $(HDAHCDINJECT)
 
 $(BUILDDIR)/SSDT-HACK.aml: ./SSDT-HACK.dsl
 	$(IASL) $(IASLFLAGS) -p $@ $<
@@ -48,7 +50,7 @@ install: $(ALL)
 	$(eval EFIDIR:=$(shell sudo ./mount_efi.sh /))
 	cp $(ALL) $(EFIDIR)/EFI/CLOVER/ACPI/patched
 
-$(HDAINJECT): $(RESOURCES)/*.plist ./patch_hda.sh
+$(HDAINJECT) $(HDAHCDINJECT): $(RESOURCES)/*.plist ./patch_hda.sh
 	./patch_hda.sh $(HDA)
 	touch $@
 
@@ -69,7 +71,17 @@ update_kernelcache:
 .PHONY: install_hda
 install_hda:
 	sudo rm -Rf $(INSTDIR)/$(HDAINJECT)
+	sudo rm -Rf $(INSTDIR)/$(HDAHCDINJECT)
 	sudo cp -R ./$(HDAINJECT) $(INSTDIR)
 	if [ "`which tag`" != "" ]; then sudo tag -a Blue $(INSTDIR)/$(HDAINJECT); fi
 	make update_kernelcache
 
+.PHONY: install_hdahcd
+install_hdacd:
+	sudo rm -Rf $(INSTDIR)/$(HDAINJECT)
+	sudo rm -Rf $(INSTDIR)/$(HDAHCDINJECT)
+	sudo cp -R ./$(HDAHCDINJECT) $(INSTDIR)
+	if [ "`which tag`" != "" ]; then sudo tag -a Blue $(INSTDIR)/$(HDAHCDINJECT); fi
+	sudo cp $(HDAZML)/*.zml* $(SLE)/AppleHDA.kext/Contents/Resources
+	if [ "`which tag`" != "" ]; then sudo tag -a Blue $(SLE)/AppleHDA.kext/Contents/Resources/*.zml*; fi
+	make update_kernelcache
