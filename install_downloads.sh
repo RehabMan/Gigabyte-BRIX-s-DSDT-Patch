@@ -175,7 +175,7 @@ else
     # alternate configuration (requires .xml.zlib .zml.zlib AppleHDA patch)
     #install_kext AppleHDAHCD_$HDA.kext
     $SUDO cp AppleHDA_${HDA}_Resources/*.zml* $SLE/AppleHDA.kext/Contents/Resources
-    $TAG -a Gray $SLE/AppleHDA.kext
+    $SUDO $TAG -a Gray $SLE/AppleHDA.kext
 fi
 
 #if [[ $MINOR_VER -ge 11 ]]; then

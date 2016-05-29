@@ -436,18 +436,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA ALC262 to ALC269</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>YgLsEA==</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>aQLsEA==</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Realtek ALC269, 1 of 4, disable 0x10ec0884</string>
 				<key>Find</key>
 				<data>hAjsEA==</data>
