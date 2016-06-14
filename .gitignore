@@ -8,7 +8,9 @@ unpatched/dsdt.dsl
 patched/dsdt.dsl
 build/*
 !build/readme.txt
-Resources_ALC269/layout/*.zlib
+AppleHDA_ALC269.kext
+AppleHDAHCD_ALC269.kext
+AppleHDA_ALC269_Resources
 brix.xcodeproj/project.xcworkspace/xcuserdata
 brix.xcodeproj/project.xcworkspace/xcshareddata/brix.xccheckout
 brix.xcodeproj/xcuserdata

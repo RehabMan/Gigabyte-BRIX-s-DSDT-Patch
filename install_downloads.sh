@@ -6,7 +6,7 @@ SUDO=sudo
 TAG=`pwd`/tools/tag
 SLE=/System/Library/Extensions
 LE=/Library/Extensions
-EXCEPTIONS="Sensors|FakePCIID_BCM57XX|FakePCIID_AR9280|FakePCIID_Intel_GbX|FakePCIID_XHCIMux|BrcmPatchRAM|BrcmBluetoothInjector|BrcmFirmwareData|CodecCommander|USBInjectAll"
+EXCEPTIONS="Sensors|FakePCIID_BCM57XX|FakePCIID_AR9280|FakePCIID_Intel_GbX|FakePCIID_XHCIMux|BrcmPatchRAM|BrcmBluetoothInjector|BrcmFirmwareData|USBInjectAll"
 
 # extract minor version (eg. 10.9 vs. 10.10 vs. 10.11)
 MINOR_VER=$([[ "$(sw_vers -productVersion)" =~ [0-9]+\.([0-9]+) ]] && echo ${BASH_REMATCH[1]})
@@ -163,16 +163,19 @@ fi
 # install kexts in the repo itself
 
 # patching AppleHDA
-$SUDO rm -Rf $KEXTDEST/AppleHDA_ALC269.kext
-$SUDO rm -Rf $KEXTDEST/AppleHDAHCD_ALC269.kext
+HDA=ALC269
+$SUDO rm -Rf $KEXTDEST/AppleHDA_$HDA.kext
+$SUDO rm -Rf $KEXTDEST/AppleHDAHCD_$HDA.kext
 $SUDO rm -f $SLE/AppleHDA.kext/Contents/Resources/*.zml*
-if [[ 0 -eq 0 ]]; then
+./patch_hda.sh "$HDA"
+if [[ $MINOR_VER -le 7 ]]; then
     # dummyHDA configuration
-    install_kext AppleHDA_ALC269.kext
+    install_kext AppleHDA_$HDA.kext
 else
-# alternate configuration (requires .xml.zlib .zml.zlib AppleHDA patch)
-    install_kext AppleHDAHCD_ALC269.kext
-    $SUDO cp AppleHDA_ALC269_Resources/*.zml* $SLE/AppleHDA.kext/Contents/Resources
+    # alternate configuration (requires .xml.zlib .zml.zlib AppleHDA patch)
+    #install_kext AppleHDAHCD_$HDA.kext
+    $SUDO cp AppleHDA_${HDA}_Resources/*.zml* $SLE/AppleHDA.kext/Contents/Resources
+    $SUDO $TAG -a Gray $SLE/AppleHDA.kext
 fi
 
 #if [[ $MINOR_VER -ge 11 ]]; then
