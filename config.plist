@@ -373,6 +373,8 @@
 			<dict>
 				<key>Comment</key>
 				<string>change 15 port limit to 20 in XHCI kext (9-series)</string>
+				<key>MatchOS</key>
+				<string>10.11.x</string>
 				<key>Disabled</key>
 				<true/>
 				<key>Find</key>
@@ -384,7 +386,23 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>change 15 port limit to 20 in XHCI kext (9-series)</string>
+				<key>MatchOS</key>
+				<string>10.12.x</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>g710////EA==</data>
+				<key>Name</key>
+				<string>AppleUSBXHCIPCI</string>
+				<key>Replace</key>
+				<data>g710////FQ==</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>10.9.5 5Ghz US FCC, svko</string>
+				<key>MatchOS</key>
+				<string>10.9.5</string>
 				<key>Find</key>
 				<data>WFQAIBcnIAAA</data>
 				<key>Name</key>
@@ -395,6 +413,8 @@
 			<dict>
 				<key>Comment</key>
 				<string>10.10.2+ 5Ghz US FCC, the-darkvoid</string>
+				<key>MatchOS</key>
+				<string>10.10.x,10.11.x,10.12.x</string>
 				<key>Find</key>
 				<data>QYP8/3QsSA==</data>
 				<key>Name</key>
@@ -404,7 +424,21 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>AirPortBrcm4360 - fcvo, 10.12.x (credit the-darkvoid)</string>
+				<key>MatchOS</key>
+				<string>10.12.x</string>
+				<key>Find</key>
+				<data>gflSqgAAdSk=</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>gflSqgAAZpA=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>10.10.2+ BT4LE-Handoff-Hotspot, Dokterdok</string>
+				<key>MatchOS</key>
+				<string>10.10.x</string>
 				<key>Find</key>
 				<data>SIXAdFwPt0g=</data>
 				<key>Name</key>
@@ -415,6 +449,8 @@
 			<dict>
 				<key>Comment</key>
 				<string>10.11.dp BT4LE-Handoff-Hotspot, credit RehabMan based on Dokterdok patch</string>
+				<key>MatchOS</key>
+				<string>10.11.x,10.12.x</string>
 				<key>Find</key>
 				<data>SIX/dEdIiwc=</data>
 				<key>Name</key>
@@ -425,6 +461,8 @@
 			<dict>
 				<key>Comment</key>
 				<string>AppleHDA .xml.zl to .zml.zl</string>
+				<key>MatchOS</key>
+				<string>10.10.x,10.11.x,10.12.x</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
@@ -436,27 +474,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Realtek ALC269, 1 of 4, disable 0x10ec0884</string>
-				<key>Find</key>
-				<data>hAjsEA==</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>AAAAAA==</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Realtek ALC269, 2 of 4, disable 0x10ec0885</string>
-				<key>Find</key>
-				<data>hQjsEA==</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>AAAAAA==</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Realtek ALC269, 3 of 4, map 0x11d41984 to 0x10ec0269</string>
+				<string>Realtek ALC269, 1 of 4, map 0x11d41984 to 0x10ec0269</string>
 				<key>Find</key>
 				<data>hBnUEQ==</data>
 				<key>Name</key>
@@ -466,7 +484,33 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>Realtek ALC269, 2 of 4, disable 0x10ec0884</string>
+				<key>MatchOS</key>
+				<string>10.7.x,10.8.x,10.9.x,10.10.x</string>
+				<key>Find</key>
+				<data>hAjsEA==</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>AAAAAA==</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Realtek ALC269, 3 of 4, disable 0x10ec0885</string>
+				<key>MatchOS</key>
+				<string>10.6.x,10.7.x,10.8.x,10.9.x,10.10.x,10.11.x,10.12.x</string>
+				<key>Find</key>
+				<data>hQjsEA==</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>AAAAAA==</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Realtek ALC269, 4 of 4, disable 0x11d41983 (new in 10.11, credit lisai9093)</string>
+				<key>MatchOS</key>
+				<string>10.6.x,10.7.x,10.11.x</string>
 				<key>Find</key>
 				<data>gxnUEQ==</data>
 				<key>Name</key>
@@ -487,12 +531,26 @@
 			<dict>
 				<key>Comment</key>
 				<string>Boot graphics glitch, 10.10.x/10.11.x</string>
+				<key>MatchOS</key>
+				<string>10.10.x,10.11.x</string>
 				<key>Find</key>
 				<data>AQAAdRc=</data>
 				<key>Name</key>
 				<string>IOGraphicsFamily</string>
 				<key>Replace</key>
 				<data>AQAAdBc=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Boot graphics glitch, 10.12.dp1 (credit denskop)</string>
+				<key>MatchOS</key>
+				<string>10.12.x</string>
+				<key>Find</key>
+				<data>AQAAdSU=</data>
+				<key>Name</key>
+				<string>IOGraphicsFamily</string>
+				<key>Replace</key>
+				<data>AQAA6yU=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
