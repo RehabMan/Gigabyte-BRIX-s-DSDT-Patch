@@ -1,9 +1,4 @@
-// Instead of providing patched DSDT/SSDT, just include a single SSDT
-// and do the rest of the work in config.plist
-
-// ObjectType return values per ACPI spec
-#define OBJECTTYPE_INTEGER 1
-#define OBJECTTYPE_PACKAGE 4
+// IGPU injection
 
 DefinitionBlock ("", "SSDT", 2, "hack", "igpu", 0)
 {
@@ -59,11 +54,32 @@ DefinitionBlock ("", "SSDT", 2, "hack", "igpu", 0)
                     "hda-gfx", Buffer() { "onboard-1" },
                     "AAPL,ig-platform-id", Buffer() {  0x03, 0x00, 0x22, 0x0d },
                 },
-                // Broadwell/HD5300/HD5500/HD5600/HD6000 (future)
+                // Broadwell/HD5300/HD5500/HD5600/HD6000
                 0x161e, 0x1616, 0x1612, 0x1626, 0x162b, 0, Package()
                 {
                     "hda-gfx", Buffer() { "onboard-1" },
                     "AAPL,ig-platform-id", Buffer() { 0x02, 0x00, 0x16, 0x16 },
+                },
+                // Skylake/HD520
+                0x1916, 0, Package()
+                {
+                    "model", Buffer() { "Intel Iris Graphics 520" },
+                    "AAPL,ig-platform-id", Buffer() { 0x00, 0x00, 0x16, 0x19 },
+                    "hda-gfx", Buffer() { "onboard-1" },
+                },
+                // Skylake/HD540
+                0x1926, 0, Package()
+                {
+                    "model", Buffer() { "Intel Iris Graphics 540" },
+                    "AAPL,ig-platform-id", Buffer() { 0x00, 0x00, 0x26, 0x19 },
+                    "hda-gfx", Buffer() { "onboard-1" },
+                },
+                // Skylake/Iris Pro HD580
+                0x193b, 0, Package()
+                {
+                    "model", Buffer() { "Intel Iris Pro Graphics 580" },
+                    "AAPL,ig-platform-id", Buffer() { 0x05, 0x00, 0x3b, 0x19 },
+                    "hda-gfx", Buffer() { "onboard-1" },
                 },
             })
 

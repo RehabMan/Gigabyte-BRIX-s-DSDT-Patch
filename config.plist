@@ -380,7 +380,7 @@
 				<key>Find</key>
 				<data>g72M/v//EA==</data>
 				<key>Name</key>
-				<string>AppleUSBXHCIPCI</string>
+				<string>com.apple.driver.usb.AppleUSBXHCIPCI</string>
 				<key>Replace</key>
 				<data>g72M/v//FQ==</data>
 			</dict>
@@ -391,10 +391,10 @@
 				<string>10.12.x</string>
 				<key>Disabled</key>
 				<true/>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCIPCI</string>
 				<key>Find</key>
 				<data>g710////EA==</data>
-				<key>Name</key>
-				<string>AppleUSBXHCIPCI</string>
 				<key>Replace</key>
 				<data>g710////FQ==</data>
 			</dict>
@@ -403,10 +403,10 @@
 				<string>10.9.5 5Ghz US FCC, svko</string>
 				<key>MatchOS</key>
 				<string>10.9.5</string>
+				<key>Name</key>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Find</key>
 				<data>WFQAIBcnIAAA</data>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
 				<key>Replace</key>
 				<data>WFQAG2cxlQAJ</data>
 			</dict>
@@ -414,11 +414,11 @@
 				<key>Comment</key>
 				<string>10.10.2+ 5Ghz US FCC, the-darkvoid</string>
 				<key>MatchOS</key>
-				<string>10.10.x,10.11.x,10.12.x</string>
+				<string>10.10.x,10.11.x</string>
+				<key>Name</key>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Find</key>
 				<data>QYP8/3QsSA==</data>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
 				<key>Replace</key>
 				<data>ZscGVVPrKw==</data>
 			</dict>
@@ -427,10 +427,10 @@
 				<string>AirPortBrcm4360 - fcvo, 10.12.x (credit the-darkvoid)</string>
 				<key>MatchOS</key>
 				<string>10.12.x</string>
+				<key>Name</key>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
 				<key>Find</key>
 				<data>gflSqgAAdSk=</data>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
 				<key>Replace</key>
 				<data>gflSqgAAZpA=</data>
 			</dict>
@@ -439,10 +439,10 @@
 				<string>10.10.2+ BT4LE-Handoff-Hotspot, Dokterdok</string>
 				<key>MatchOS</key>
 				<string>10.10.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOBluetoothFamily</string>
 				<key>Find</key>
 				<data>SIXAdFwPt0g=</data>
-				<key>Name</key>
-				<string>IOBluetoothFamily</string>
 				<key>Replace</key>
 				<data>Qb4PAAAA61k=</data>
 			</dict>
@@ -451,10 +451,10 @@
 				<string>10.11.dp BT4LE-Handoff-Hotspot, credit RehabMan based on Dokterdok patch</string>
 				<key>MatchOS</key>
 				<string>10.11.x,10.12.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOBluetoothFamily</string>
 				<key>Find</key>
 				<data>SIX/dEdIiwc=</data>
-				<key>Name</key>
-				<string>IOBluetoothFamily</string>
 				<key>Replace</key>
 				<data>Qb4PAAAA60Q=</data>
 			</dict>
@@ -465,20 +465,20 @@
 				<string>10.10.x,10.11.x,10.12.x</string>
 				<key>Disabled</key>
 				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Find</key>
 				<data>LnhtbC56bA==</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
 				<key>Replace</key>
 				<data>LnptbC56bA==</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>Realtek ALC269, 1 of 4, map 0x11d41984 to 0x10ec0269</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Find</key>
 				<data>hBnUEQ==</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
 				<key>Replace</key>
 				<data>aQLsEA==</data>
 			</dict>
@@ -487,10 +487,10 @@
 				<string>Realtek ALC269, 2 of 4, disable 0x10ec0884</string>
 				<key>MatchOS</key>
 				<string>10.7.x,10.8.x,10.9.x,10.10.x</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Find</key>
 				<data>hAjsEA==</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
 				<key>Replace</key>
 				<data>AAAAAA==</data>
 			</dict>
@@ -499,10 +499,10 @@
 				<string>Realtek ALC269, 3 of 4, disable 0x10ec0885</string>
 				<key>MatchOS</key>
 				<string>10.6.x,10.7.x,10.8.x,10.9.x,10.10.x,10.11.x,10.12.x</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Find</key>
 				<data>hQjsEA==</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
 				<key>Replace</key>
 				<data>AAAAAA==</data>
 			</dict>
@@ -511,10 +511,10 @@
 				<string>Realtek ALC269, 4 of 4, disable 0x11d41983 (new in 10.11, credit lisai9093)</string>
 				<key>MatchOS</key>
 				<string>10.6.x,10.7.x,10.11.x</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleHDA</string>
 				<key>Find</key>
 				<data>gxnUEQ==</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
 				<key>Replace</key>
 				<data>AAAAAA==</data>
 			</dict>
@@ -524,7 +524,7 @@
 				<key>Find</key>
 				<data>AEFQUExFIFNTRAA=</data>
 				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
+				<string>com.apple.iokit.IOAHCIBlockStorage</string>
 				<key>Replace</key>
 				<data>AAAAAAAAAAAAAAA=</data>
 			</dict>
@@ -533,10 +533,10 @@
 				<string>Boot graphics glitch, 10.10.x/10.11.x</string>
 				<key>MatchOS</key>
 				<string>10.10.x,10.11.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOGraphicsFamily</string>
 				<key>Find</key>
 				<data>AQAAdRc=</data>
-				<key>Name</key>
-				<string>IOGraphicsFamily</string>
 				<key>Replace</key>
 				<data>AQAAdBc=</data>
 			</dict>
@@ -548,27 +548,29 @@
 				<key>Find</key>
 				<data>AQAAdSU=</data>
 				<key>Name</key>
-				<string>IOGraphicsFamily</string>
+				<string>com.apple.iokit.IOGraphicsFamily</string>
 				<key>Replace</key>
 				<data>AQAA6yU=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-audio, port 0105, 0x0a260005 0x0a260006, 0x0d220003, 0x0a2e000a, 0x0a26000a</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Find</key>
 				<data>AQUJAAAEAACHAAAA</data>
-				<key>Name</key>
-				<string>AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>AQUJAAAIAACHAAAA</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>HDMI-audio, port 0105(12), 0x0a260005 0x0a260006, 0x0d220003, 0x0a2e000a, 0x0a26000a</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Find</key>
 				<data>AQUJAAAEAACHAAAA</data>
-				<key>Name</key>
-				<string>#AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>AQUSAAAIAACHAAAA</data>
 			</dict>
