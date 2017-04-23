@@ -208,7 +208,7 @@
 	</dict>
 	<key>Graphics</key>
 	<dict>
-		<key>#ig-platform-id</key>
+		<key>ig-platform-id</key>
 		<string>0x0d220003</string>
 		<key>Inject</key>
 		<dict>
