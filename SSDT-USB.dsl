@@ -1,8 +1,8 @@
 // Instead of providing patched DSDT/SSDT, just include a single SSDT
 // and do the rest of the work in config.plist
 
-DefinitionBlock ("", "SSDT", 2, "hack", "usb", 0)
-{
+//DefinitionBlock ("", "SSDT", 2, "hack", "usb", 0)
+//{
 //
 // Override for USBInjectAll.kext
 //
@@ -187,6 +187,6 @@ DefinitionBlock ("", "SSDT", 2, "hack", "usb", 0)
             }
         }
     }
-}
+//}
 
 //EOF
