@@ -12,6 +12,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
     #include "SSDT-IGPU.dsl"
     #include "SSDT-USB.dsl"
     #include "SSDT-ALC269.dsl"
+    #include "SSDT-EC.dsl"
 }
 
 //EOF
