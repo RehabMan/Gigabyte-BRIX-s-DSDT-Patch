@@ -372,34 +372,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>change 15 port limit to 20 in XHCI kext (9-series)</string>
-				<key>MatchOS</key>
-				<string>10.11.x</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>g72M/v//EA==</data>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCIPCI</string>
-				<key>Replace</key>
-				<data>g72M/v//FQ==</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change 15 port limit to 20 in XHCI kext (9-series)</string>
-				<key>MatchOS</key>
-				<string>10.12.x</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCIPCI</string>
-				<key>Find</key>
-				<data>g710////EA==</data>
-				<key>Replace</key>
-				<data>g710////FQ==</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>10.9.5 5Ghz US FCC, svko</string>
 				<key>MatchOS</key>
 				<string>10.9.5</string>
@@ -462,7 +434,7 @@
 				<key>Comment</key>
 				<string>AppleHDA .xml.zl to .zml.zl</string>
 				<key>MatchOS</key>
-				<string>10.10.x,10.11.x,10.12.x</string>
+				<string>10.10.x,10.11.x,10.12.x,10.13.x</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Name</key>
@@ -527,30 +499,6 @@
 				<string>com.apple.iokit.IOAHCIBlockStorage</string>
 				<key>Replace</key>
 				<data>AAAAAAAAAAAAAAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Boot graphics glitch, 10.10.x/10.11.x</string>
-				<key>MatchOS</key>
-				<string>10.10.x,10.11.x</string>
-				<key>Name</key>
-				<string>com.apple.iokit.IOGraphicsFamily</string>
-				<key>Find</key>
-				<data>AQAAdRc=</data>
-				<key>Replace</key>
-				<data>AQAAdBc=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Boot graphics glitch, 10.12.dp1 (credit denskop)</string>
-				<key>MatchOS</key>
-				<string>10.12.x</string>
-				<key>Find</key>
-				<data>AQAAdSU=</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>AQAA6yU=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
