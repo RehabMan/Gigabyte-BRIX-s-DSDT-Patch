@@ -73,8 +73,6 @@
 		</dict>
 		<key>SSDT</key>
 		<dict>
-			<key>DropOem</key>
-			<false/>
 			<key>Generate</key>
 			<false/>
 		</dict>
@@ -83,10 +81,6 @@
 	<dict>
 		<key>Arguments</key>
 		<string>kext-dev-mode=1 nv_disable=1 dart=0</string>
-		<key>Legacy</key>
-		<string>LegacyBiosDefault</string>
-		<key>Log</key>
-		<false/>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
@@ -303,10 +297,6 @@
 		</dict>
 		<key>USB</key>
 		<dict>
-			<key>AddClockID</key>
-			<false/>
-			<key>FixOwnership</key>
-			<false/>
 			<key>Inject</key>
 			<false/>
 		</dict>
@@ -361,8 +351,6 @@
 			<key>Intel</key>
 			<false/>
 		</dict>
-		<key>InjectEDID</key>
-		<false/>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
