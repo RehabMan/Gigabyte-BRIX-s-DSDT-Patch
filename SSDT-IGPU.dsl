@@ -89,14 +89,11 @@
                 If (!Arg2) { Return (Buffer() { 0x03 } ) }
                 // search for matching device-id in device-id list
                 Local0 = Match(GIDL, MEQ, GDID, MTR, 0, 0)
-                If (Ones != Local0)
-                {
-                    // start search for zero-terminator (prefix to injection package)
-                    Local0 = Match(GIDL, MEQ, 0, MTR, 0, Local0+1)
-                    Return (DerefOf(GIDL[Local0+1]))
-                }
                 // should never happen, but inject nothing in this case
-                Return (Package() { })
+                If (Ones == Local0) { Return (Package() {}) }
+                // start search for zero-terminator (prefix to injection package)
+                Local0 = DerefOf(GIDL[Match(GIDL, MEQ, 0, MTR, 0, Local0+1)+1])
+                Return (Local0)
             }
         }
     }
