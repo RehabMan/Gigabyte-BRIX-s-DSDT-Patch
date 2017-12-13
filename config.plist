@@ -6,6 +6,25 @@
 	<dict>
 		<key>DSDT</key>
 		<dict>
+			<key>Fixes</key>
+			<dict>
+				<key>AddDTGP</key>
+				<true/>
+				<key>AddMCHC</key>
+				<true/>
+				<key>AddIMEI</key>
+				<true/>
+				<key>FixSBUS</key>
+				<true/>
+				<key>FixTMR</key>
+				<true/>
+				<key>FixRTC</key>
+				<true/>
+				<key>FixIPIC</key>
+				<true/>
+				<key>FixHPET</key>
+				<true/>
+			</dict>
 			<key>Patches</key>
 			<array>
 				<dict>
@@ -49,27 +68,6 @@
 					<data>SERBVQ==</data>
 				</dict>
 			</array>
-			<key>Fixes</key>
-			<dict>
-				<key>NewWay_80000000</key>
-				<true/>
-				<key>AddDTGP_0001</key>
-				<true/>
-				<key>AddMCHC_0008</key>
-				<true/>
-				<key>AddIMEI_80000</key>
-				<true/>
-				<key>FixSBUS_0080</key>
-				<true/>
-				<key>FIX_TMR_40000</key>
-				<true/>
-				<key>FIX_RTC_20000</key>
-				<true/>
-				<key>FixIPIC_0040</key>
-				<true/>
-				<key>FixHPET_0010</key>
-				<true/>
-			</dict>
 		</dict>
 		<key>SSDT</key>
 		<dict>
