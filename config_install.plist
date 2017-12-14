@@ -62,8 +62,6 @@
 		<false/>
 		<key>Timeout</key>
 		<integer>5</integer>
-		<key>XMPDetection</key>
-		<false/>
 	</dict>
 	<key>Devices</key>
 	<dict>
