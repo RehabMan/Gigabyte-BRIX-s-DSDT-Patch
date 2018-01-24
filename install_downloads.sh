@@ -7,6 +7,7 @@ TAG=`pwd`/tools/tag
 SLE=/System/Library/Extensions
 LE=/Library/Extensions
 EXCEPTIONS="Sensors|FakePCIID_BCM57XX|FakePCIID_AR9280|FakePCIID_Intel_GbX|FakePCIID_XHCIMux|BrcmPatchRAM|BrcmBluetoothInjector|BrcmFirmwareData|USBInjectAll|Lilu|IntelGraphicsFixup"
+ESSENTIAL="FakeSMC.kext RealtekRTL8111.kext USBInjectAll.kext Lilu.kext IntelGraphicsFixup.kext"
 
 # extract minor version (eg. 10.9 vs. 10.10 vs. 10.11)
 MINOR_VER=$([[ "$(sw_vers -productVersion)" =~ [0-9]+\.([0-9]+) ]] && echo ${BASH_REMATCH[1]})
@@ -196,6 +197,16 @@ fi
 
 # force cache rebuild with output
 $SUDO touch $SLE && $SUDO kextcache -u /
+
+# install/update kexts on EFI/Clover/kexts/Other
+EFI=`./mount_efi.sh`
+echo Updating kexts at EFI/Clover/kexts/Other
+for kext in $ESSENTIAL; do
+    if [[ -e $KEXTDEST/$kext ]]; then
+        echo updating $EFI/EFI/CLOVER/kexts/Other/$kext
+        cp -Rf $KEXTDEST/$kext $EFI/EFI/CLOVER/kexts/Other
+    fi
+done
 
 # unzip/install tools
 check_directory ./downloads/tools/*.zip

@@ -10,6 +10,13 @@ http://www.tonymacx86.com/yosemite-desktop-guides/167933-guide-gigabyte-brix-s-u
 
 ### Change Log:
 
+2018-01-24
+
+- add preliminary Broadwell support (not tested)
+
+- copy "essential" kexts to EFI/Clover/kexts/Other as part of install_downloads.sh
+
+
 2015-10-24
 
 - refactor SSDT-HACK into separate SSDTs

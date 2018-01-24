@@ -60,6 +60,13 @@
                     "hda-gfx", Buffer() { "onboard-1" },
                     "AAPL,ig-platform-id", Buffer() { 0x02, 0x00, 0x16, 0x16 },
                 },
+                // Broadwell Iris Pro Graphics 6200
+                0x1622, 0, Package()
+                {
+                    "model", Buffer() { "Intel Iris Pro Graphics 6200" },
+                    "hda-gfx", Buffer() { "onboard-1" },
+                    "AAPL,ig-platform-id", Buffer() { 0x02, 0x00, 0x22, 0x16 },
+                },
                 // Skylake/HD520
                 0x1916, 0, Package()
                 {

@@ -348,8 +348,6 @@
 	</dict>
 	<key>Graphics</key>
 	<dict>
-		<key>ig-platform-id</key>
-		<string>0x0d220003</string>
 		<key>Inject</key>
 		<dict>
 			<key>Intel</key>
@@ -515,6 +513,18 @@
 				<data>AQUJAAAEAACHAAAA</data>
 				<key>Replace</key>
 				<data>AQUSAAAIAACHAAAA</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio, port 0105, 0x16060002 0x16060002 0x16160002 0x16260002 0x16220002 0x162b0002 0x162b0004 0x16260004 0x16220007 0x162b0008 0x16260008</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Find</key>
+				<data>AQUJAAAEAAAHBQAA</data>
+				<key>Replace</key>
+				<data>AQUJAAAIAACCAAAA</data>
 			</dict>
 		</array>
 	</dict>
