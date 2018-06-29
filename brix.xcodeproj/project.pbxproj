@@ -19,7 +19,6 @@
 		ED3AF2321CC40740004F19AC /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; usesTabs = 1; };
 		ED3F518A1A2029DE0060691A /* install_downloads.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = install_downloads.sh; sourceTree = "<group>"; };
 		ED3F518B1A2029DE0060691A /* download.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = download.sh; sourceTree = "<group>"; };
-		ED46CEBB1EC25C370040B573 /* SSDT-PluginType1.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-PluginType1.dsl"; sourceTree = "<group>"; };
 		ED48DF001B4CCCC800BDDC62 /* SSDT-HACK.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-HACK.dsl"; sourceTree = "<group>"; };
 		ED71D7551B98D1F80006C457 /* config_install.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config_install.plist; sourceTree = "<group>"; };
 		ED8AD9DF1CFB5F2700C2179E /* SSDT-ALC269.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-ALC269.dsl"; sourceTree = "<group>"; };
@@ -38,7 +37,6 @@
 				8455352818E65265001ADBFD /* config.plist */,
 				ED3AF2321CC40740004F19AC /* makefile */,
 				ED48DF001B4CCCC800BDDC62 /* SSDT-HACK.dsl */,
-				ED46CEBB1EC25C370040B573 /* SSDT-PluginType1.dsl */,
 				ED0AD2111ECF4405008B6854 /* SSDT-EC.dsl */,
 				EDB5CCDB1EC25AD3007FF737 /* SSDT-XOSI.dsl */,
 				ED373E171C0535C1005018E4 /* SSDT-IGPU.dsl */,

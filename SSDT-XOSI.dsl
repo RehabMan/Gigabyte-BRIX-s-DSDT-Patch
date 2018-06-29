@@ -1,6 +1,6 @@
 // _OSI handling
 
-//DefinitionBlock ("", "SSDT", 2, "hack", "hack", 0)
+//DefinitionBlock("", "SSDT", 2, "hack", "_XOSI", 0)
 //{
     // All _OSI calls in DSDT are routed to XOSI...
     // XOSI simulates "Windows 2009" (which is Windows 7)

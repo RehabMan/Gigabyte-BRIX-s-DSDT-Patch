@@ -1,6 +1,6 @@
 // IGPU injection
 
-//DefinitionBlock ("", "SSDT", 2, "hack", "igpu", 0)
+//DefinitionBlock("", "SSDT", 2, "hack", "_IGPU", 0)
 //{
     External(_SB.PCI0, DeviceObj)
     Scope(_SB.PCI0)

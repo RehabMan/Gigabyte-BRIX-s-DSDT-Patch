@@ -1,5 +1,5 @@
 // generated from: ../codec.git/gen_ahhcd.sh ALC269
-//DefinitionBlock ("", "SSDT", 2, "hack", "ALC269", 0)
+//DefinitionBlock("", "SSDT", 2, "hack", "_ALC269", 0)
 //{
     External(_SB.PCI0.HDEF, DeviceObj)
     Name(_SB.PCI0.HDEF.RMCF, Package()
