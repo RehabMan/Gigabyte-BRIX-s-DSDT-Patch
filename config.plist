@@ -109,7 +109,7 @@
 						<key>Key</key>
 						<string>layout-id</string>
 						<key>Value</key>
-						<integer>1</integer>
+						<integer>2</integer>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -130,7 +130,7 @@
 						<key>Key</key>
 						<string>layout-id</string>
 						<key>Value</key>
-						<integer>1</integer>
+						<integer>2</integer>
 					</dict>
 					<dict>
 						<key>Key</key>
@@ -427,7 +427,7 @@
 				<key>Comment</key>
 				<string>AppleHDA .xml.zl to .zml.zl</string>
 				<key>MatchOS</key>
-				<string>10.10.x,10.11.x,10.12.x,10.13.x</string>
+				<string>10.10.x,10.11.x,10.12.x,10.13.x,10.14.x</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Name</key>

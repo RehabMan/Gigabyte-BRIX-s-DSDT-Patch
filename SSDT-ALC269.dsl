@@ -22,7 +22,7 @@
                     Package(){},
                     Package()
                     {
-                        "LayoutID", 1,
+                        "LayoutID", 2,
                         "PinConfigs", Package()
                         {
                             Package(){},

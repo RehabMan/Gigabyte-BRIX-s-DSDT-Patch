@@ -23,7 +23,7 @@
 		ED71D7551B98D1F80006C457 /* config_install.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config_install.plist; sourceTree = "<group>"; };
 		ED8AD9DF1CFB5F2700C2179E /* SSDT-ALC269.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-ALC269.dsl"; sourceTree = "<group>"; };
 		EDB5CCDB1EC25AD3007FF737 /* SSDT-XOSI.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-XOSI.dsl"; sourceTree = "<group>"; };
-		EDC7F9431B4C64FA00B49451 /* layout1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = layout1.plist; path = Resources_ALC269/layout1.plist; sourceTree = "<group>"; };
+		EDC7F9431B4C64FA00B49451 /* layout2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = layout2.plist; path = Resources_ALC269/layout2.plist; sourceTree = "<group>"; };
 		EDF134011B4F62DA009D8597 /* ahhcd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ahhcd.plist; path = Resources_ALC269/ahhcd.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,7 +55,7 @@
 				84490D5D1A14945B000E1BFB /* patch_hda.sh */,
 				EDF134011B4F62DA009D8597 /* ahhcd.plist */,
 				ED0334941C0A124F004E6BDB /* Platforms.plist */,
-				EDC7F9431B4C64FA00B49451 /* layout1.plist */,
+				EDC7F9431B4C64FA00B49451 /* layout2.plist */,
 			);
 			name = audio;
 			sourceTree = "<group>";
