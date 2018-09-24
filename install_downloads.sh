@@ -14,13 +14,14 @@ warn_about_superuser
 # install tools
 install_tools
 
+# remove old kexts
+remove_deprecated_kexts
+# EHCI is disabled, so no need for FakePCIID_XHCIMux.kext
+remove_kext FakePCIID_XHCIMux.kext
+
 # install required kexts
 install_download_kexts
 install_brcmpatchram_kexts
-remove_deprecated_kexts
-
-# EHCI is disabled, so no need for FakePCIID_XHCIMux.kext
-remove_kext FakePCIID_XHCIMux.kext
 
 # create/install patched AppleHDA files
 install_hda
