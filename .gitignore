@@ -7,10 +7,10 @@ build/*
 AppleHDA_ALC269.kext
 AppleHDAHCD_ALC269.kext
 AppleHDA_ALC269_Resources
-brix.xcodeproj/project.xcworkspace/xcuserdata
-brix.xcodeproj/project.xcworkspace/xcshareddata/brix.xccheckout
-brix.xcodeproj/project.xcworkspace/xcshareddata/
-brix.xcodeproj/xcuserdata
+Patches.xcodeproj/project.xcworkspace/xcuserdata
+Patches.xcodeproj/project.xcworkspace/xcshareddata/brix.xccheckout
+Patches.xcodeproj/project.xcworkspace/xcshareddata/
+Patches.xcodeproj/xcuserdata
 native_linux/*
 !native_linux/readme.txt
 native_patchmatic/*
