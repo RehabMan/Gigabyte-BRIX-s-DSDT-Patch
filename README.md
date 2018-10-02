@@ -10,6 +10,11 @@ http://www.tonymacx86.com/yosemite-desktop-guides/167933-guide-gigabyte-brix-s-u
 
 ### Change Log:
 
+2018-09-01
+
+- switch to AppleALC.kext for audio
+
+
 2018-01-24
 
 - add preliminary Broadwell support (not tested)

@@ -9,7 +9,6 @@
 /* Begin PBXFileReference section */
 		8406FCD6188627B8006D8DB7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8455352818E65265001ADBFD /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
-		ED0334941C0A124F004E6BDB /* Platforms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Platforms.plist; path = Resources_ALC269/Platforms.plist; sourceTree = "<group>"; };
 		ED0AD2111ECF4405008B6854 /* SSDT-EC.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-EC.dsl"; sourceTree = "<group>"; };
 		ED1622741FE80FFC007920E4 /* config_install_broadwell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config_install_broadwell.plist; sourceTree = "<group>"; };
 		ED373E171C0535C1005018E4 /* SSDT-IGPU.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-IGPU.dsl"; sourceTree = "<group>"; };
@@ -19,10 +18,7 @@
 		ED3F518B1A2029DE0060691A /* download.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = download.sh; sourceTree = "<group>"; };
 		ED48DF001B4CCCC800BDDC62 /* SSDT-HACK.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-HACK.dsl"; sourceTree = "<group>"; };
 		ED71D7551B98D1F80006C457 /* config_install.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config_install.plist; sourceTree = "<group>"; };
-		ED8AD9DF1CFB5F2700C2179E /* SSDT-ALC269.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-ALC269.dsl"; sourceTree = "<group>"; };
 		EDB5CCDB1EC25AD3007FF737 /* SSDT-XOSI.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-XOSI.dsl"; sourceTree = "<group>"; };
-		EDC7F9431B4C64FA00B49451 /* layout2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = layout2.plist; path = Resources_ALC269/layout2.plist; sourceTree = "<group>"; };
-		EDF134011B4F62DA009D8597 /* ahhcd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ahhcd.plist; path = Resources_ALC269/ahhcd.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -39,21 +35,9 @@
 				EDB5CCDB1EC25AD3007FF737 /* SSDT-XOSI.dsl */,
 				ED373E171C0535C1005018E4 /* SSDT-IGPU.dsl */,
 				ED373E181C0535C1005018E4 /* SSDT-USB.dsl */,
-				ED8AD9DF1CFB5F2700C2179E /* SSDT-ALC269.dsl */,
 				ED3F518B1A2029DE0060691A /* download.sh */,
 				ED3F518A1A2029DE0060691A /* install_downloads.sh */,
-				84B540381ACB34B600D8ABAE /* audio */,
 			);
-			sourceTree = "<group>";
-		};
-		84B540381ACB34B600D8ABAE /* audio */ = {
-			isa = PBXGroup;
-			children = (
-				EDF134011B4F62DA009D8597 /* ahhcd.plist */,
-				ED0334941C0A124F004E6BDB /* Platforms.plist */,
-				EDC7F9431B4C64FA00B49451 /* layout2.plist */,
-			);
-			name = audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

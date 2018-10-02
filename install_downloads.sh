@@ -2,8 +2,7 @@
 #set -x
 
 EXCEPTIONS=
-ESSENTIAL=
-HDA=ALC269
+ESSENTIAL="AppleALC.kext"
 
 # include subroutines
 DIR=$(dirname ${BASH_SOURCE[0]})
@@ -18,13 +17,13 @@ install_tools
 remove_deprecated_kexts
 # EHCI is disabled, so no need for FakePCIID_XHCIMux.kext
 remove_kext FakePCIID_XHCIMux.kext
+# using AppleALC.kext, remove CodecCommander.kext and patched zml.zlib files
+remove_kext CodecCommander.kext
+sudo rm -f /System/Library/Extensions/AppleHDA.kext/Contents/Resources/*.zml.zlib
 
 # install required kexts
 install_download_kexts
 install_brcmpatchram_kexts
-
-# create/install patched AppleHDA files
-install_hda
 
 # all kexts are now installed, so rebuild cache
 rebuild_kernel_cache

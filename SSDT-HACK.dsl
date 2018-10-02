@@ -10,7 +10,6 @@ DefinitionBlock("", "SSDT", 2, "hack", "_HACK", 0)
     #include "SSDT-XOSI.dsl"
     #include "SSDT-IGPU.dsl"
     #include "SSDT-USB.dsl"
-    #include "SSDT-ALC269.dsl"
     #include "SSDT-EC.dsl"
 }
 
