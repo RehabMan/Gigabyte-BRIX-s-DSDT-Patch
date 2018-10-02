@@ -20,6 +20,9 @@ remove_kext FakePCIID_XHCIMux.kext
 # using AppleALC.kext, remove CodecCommander.kext and patched zml.zlib files
 remove_kext CodecCommander.kext
 sudo rm -f /System/Library/Extensions/AppleHDA.kext/Contents/Resources/*.zml.zlib
+# also no need for FakePCIID.kext + FakePCIID_Intel_HDMI_Audio.kext
+remove_kext FakePCIID.kext
+remove_kext FakePCIID_Intel_HDMI_Audio.kext
 
 # install required kexts
 install_download_kexts
@@ -30,5 +33,8 @@ rebuild_kernel_cache
 
 # update kexts on EFI/CLOVER/kexts/Other
 update_efi_kexts
+./mount_efi.sh
+rm -Rf $EFI/EFI/CLOVER/kexts/Other/FakePCIID.kext
+rm -Rf $EFI/EFI/CLOVER/kexts/Other/FakePCIID_Intel_HDMI_Audio.kext
 
 #EOF

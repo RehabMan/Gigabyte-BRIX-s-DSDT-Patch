@@ -114,9 +114,9 @@
 			<dict>
 				<key>framebuffer-patch-enable</key>
 				<integer>1</integer>
-				<key>framebuffer-con1-enable</key>
+				<key>framebuffer-con0-enable</key>
 				<integer>1</integer>
-				<key>framebuffer-con1-type</key>
+				<key>framebuffer-con0-type</key>
 				<data>AAgAAA==</data>
 			</dict>
 			<key>PciRoot(0)/Pci(0x1b,0)</key>
