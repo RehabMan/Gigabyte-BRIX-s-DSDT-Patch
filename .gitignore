@@ -4,9 +4,6 @@ stash/*
 _downloads/*
 build/*
 !build/readme.txt
-AppleHDA_ALC269.kext
-AppleHDAHCD_ALC269.kext
-AppleHDA_ALC269_Resources
 Patches.xcodeproj/project.xcworkspace/xcuserdata
 Patches.xcodeproj/project.xcworkspace/xcshareddata/brix.xccheckout
 Patches.xcodeproj/project.xcworkspace/xcshareddata/
@@ -15,6 +12,3 @@ native_linux/*
 !native_linux/readme.txt
 native_patchmatic/*
 !native_patchmatic/readme.txt
-_hdainject_marker.txt
-_hdazml_marker.txt
-AppleHDA.kext
