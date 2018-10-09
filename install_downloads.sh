@@ -32,8 +32,8 @@ rebuild_kernel_cache
 
 # update kexts on EFI/CLOVER/kexts/Other
 update_efi_kexts
-EFI=$(./mount_efi.sh)
-rm -Rf $EFI/EFI/CLOVER/kexts/Other/FakePCIID.kext
-rm -Rf $EFI/EFI/CLOVER/kexts/Other/FakePCIID_Intel_HDMI_Audio.kext
+EFI="$(./mount_efi.sh)"
+rm -Rf "$EFI"/EFI/CLOVER/kexts/Other/FakePCIID.kext
+rm -Rf "$EFI"/EFI/CLOVER/kexts/Other/FakePCIID_Intel_HDMI_Audio.kext
 
 #EOF
