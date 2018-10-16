@@ -27,8 +27,8 @@ remove_kext FakePCIID_Intel_HDMI_Audio.kext
 install_download_kexts
 install_brcmpatchram_kexts
 
-# all kexts are now installed, so rebuild cache
-rebuild_kernel_cache
+# LiluFriend and kernel cache rebuild
+finish_kexts
 
 # update kexts on EFI/CLOVER/kexts/Other
 update_efi_kexts
