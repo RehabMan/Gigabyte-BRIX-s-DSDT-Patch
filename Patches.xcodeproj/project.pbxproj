@@ -9,6 +9,7 @@
 /* Begin PBXFileReference section */
 		8406FCD6188627B8006D8DB7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8455352818E65265001ADBFD /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		ED054D86217FE4C100D4E0CA /* config_broadwell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config_broadwell.plist; sourceTree = "<group>"; };
 		ED0AD2111ECF4405008B6854 /* SSDT-EC.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-EC.dsl"; sourceTree = "<group>"; };
 		ED1622741FE80FFC007920E4 /* config_install_broadwell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config_install_broadwell.plist; sourceTree = "<group>"; };
 		ED373E171C0535C1005018E4 /* SSDT-IGPU.dsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSDT-IGPU.dsl"; sourceTree = "<group>"; };
@@ -27,8 +28,9 @@
 			children = (
 				8406FCD6188627B8006D8DB7 /* README.md */,
 				ED71D7551B98D1F80006C457 /* config_install.plist */,
-				ED1622741FE80FFC007920E4 /* config_install_broadwell.plist */,
 				8455352818E65265001ADBFD /* config.plist */,
+				ED1622741FE80FFC007920E4 /* config_install_broadwell.plist */,
+				ED054D86217FE4C100D4E0CA /* config_broadwell.plist */,
 				ED3AF2321CC40740004F19AC /* makefile */,
 				ED48DF001B4CCCC800BDDC62 /* SSDT-HACK.dsl */,
 				EDB5CCDB1EC25AD3007FF737 /* SSDT-XOSI.dsl */,

@@ -109,9 +109,9 @@
 			<dict>
 				<key>framebuffer-patch-enable</key>
 				<integer>1</integer>
-				<key>framebuffer-con0-enable</key>
+				<key>framebuffer-con1-enable</key>
 				<integer>1</integer>
-				<key>framebuffer-con0-type</key>
+				<key>framebuffer-con1-type</key>
 				<data>AAgAAA==</data>
 			</dict>
 			<key>PciRoot(0)/Pci(0x1b,0)</key>
@@ -119,7 +119,7 @@
 				<key>#Comment</key>
 				<string>Intel HDA</string>
 				<key>layout-id</key>
-				<integer>10</integer>
+				<integer>1</integer>
 				<key>PinConfigurations</key>
 				<data></data>
 			</dict>
@@ -128,7 +128,7 @@
 				<key>#Comment</key>
 				<string>Intel HDMI HDA</string>
 				<key>layout-id</key>
-				<integer>10</integer>
+				<integer>1</integer>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 			</dict>
@@ -302,7 +302,7 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>ProductName</key>
-		<string>iMac14,1</string>
+		<string>iMac16,1</string>
 		<key>Trust</key>
 		<true/>
 	</dict>

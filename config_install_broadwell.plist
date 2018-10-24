@@ -65,11 +65,6 @@
 	</dict>
 	<key>Devices</key>
 	<dict>
-		<key>FakeID</key>
-		<dict>
-			<key>IntelGFX</key>
-			<string>0x04128086</string>
-		</dict>
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
@@ -178,7 +173,7 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>ProductName</key>
-		<string>iMac14,1</string>
+		<string>iMac16,2</string>
 		<key>Trust</key>
 		<true/>
 	</dict>

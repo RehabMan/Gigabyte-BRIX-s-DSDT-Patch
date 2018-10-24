@@ -119,6 +119,59 @@
                     },
                 },
             },
+            // XHC overrides (8086:9cb1) Broadwell BRIX
+            "8086_9cb1", Package()
+            {
+                "port-count", Buffer() { 15, 0, 0, 0 },
+                "ports", Package()
+                {
+                    "HS01", Package() // HS USB3 front top
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x01, 0, 0, 0 },
+                    },
+                    "HS02", Package() // HS USB3 front bottom
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x02, 0, 0, 0 },
+                    },
+                    "HS03", Package() // HS USB3 rear top
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x03, 0, 0, 0 },
+                    },
+                    "HS04", Package() // HS USB3 rear bottom
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 0x04, 0, 0, 0 },
+                    },
+                    "HS07", Package() // bluetooth
+                    {
+                        "UsbConnector", 255,
+                        "port", Buffer() { 7, 0, 0, 0 },
+                    },
+                    "SSP1", Package() // SS USB3 front top
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 12, 0, 0, 0 },
+                    },
+                    "SSP2", Package() // SS USB3 front bottom
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 13, 0, 0, 0 },
+                    },
+                    "SSP3", Package() // SS USB3 rear top
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 14, 0, 0, 0 },
+                    },
+                    "SSP4", Package() // SS USB3 rear bottom
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 15, 0, 0, 0 },
+                    },
+                },
+            },
         })
     }
 
