@@ -150,22 +150,22 @@
                         "UsbConnector", 255,
                         "port", Buffer() { 7, 0, 0, 0 },
                     },
-                    "SSP1", Package() // SS USB3 front top
+                    "SS01", Package() // SS USB3 front top
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 12, 0, 0, 0 },
                     },
-                    "SSP2", Package() // SS USB3 front bottom
+                    "SS02", Package() // SS USB3 front bottom
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 13, 0, 0, 0 },
                     },
-                    "SSP3", Package() // SS USB3 rear top
+                    "SS03", Package() // SS USB3 rear top
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 14, 0, 0, 0 },
                     },
-                    "SSP4", Package() // SS USB3 rear bottom
+                    "SS04", Package() // SS USB3 rear bottom
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 15, 0, 0, 0 },
