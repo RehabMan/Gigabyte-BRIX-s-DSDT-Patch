@@ -6,7 +6,7 @@ The current repository actually uses only on-the-fly patches vai config.plist an
 
 Please refer to this guide thread on tonymacx86.com for a step-by-step process, feedback, and questions:
 
-http://www.tonymacx86.com/yosemite-desktop-guides/167933-guide-gigabyte-brix-s-using-clover-uefi-gb-bxi5h-4200-a.html
+https://www.tonymacx86.com/threads/guide-gigabyte-brix-using-clover-uefi-gb-bxi5h-4200-gb-bxi5-4570r-gb-bxi7-4770r.261710/
 
 ### Change Log:
 
